@@ -1,0 +1,4 @@
+django==2.0.1
+celery==4.0.2
+psycopg2
+pip install git+https://github.com/Dmitry-Kiselev/cluster_tasks.git
