@@ -7,7 +7,6 @@ import cluster_tasks
 
 @receiver(post_save, sender=Job)
 def start_job(sender, instance, created, **kwargs):
-    print('signal start')
     try:
         task = getattr(cluster_tasks, instance.task.name)
     except AttributeError:
