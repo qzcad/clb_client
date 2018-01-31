@@ -81,11 +81,10 @@ WSGI_APPLICATION = 'clb_client.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'clb',
-        'USER': 'clb',
-        'HOST': 'localhost',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'database',
         'PORT': 5432,
-        'PASSWORD': 'clb'
     }
 }
 
@@ -135,3 +134,8 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     )
 }
+
+try:
+    from clb_client.settings_local import *
+except ImportError:
+    pass
