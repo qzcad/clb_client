@@ -3,7 +3,7 @@ import os
 from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cluster_client.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'clb_client.settings')
 
 broker_host = os.environ['BROKER_HOST']
 broker_port = os.environ['BROKER_PORT']
@@ -14,8 +14,7 @@ broker_url = 'redis://{host}:{port}/{db_number}'.format(
     port=broker_port,
     db_number=db_number
 )
-
-app = Celery('cluster_client', broker=broker_url)
+app = Celery('clb_client', broker=broker_url)
 
 app.conf.result_backend = broker_url
 

@@ -5,7 +5,7 @@ import cluster_tasks
 from rest_framework.response import Response
 
 from client.serializers import BaseTaskSerializer
-from cluster_client.celery import app
+from clb_client.celery import app
 
 
 class CreateJobAPIView(views.APIView):
