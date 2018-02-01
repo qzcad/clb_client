@@ -4,9 +4,12 @@ from rest_framework import serializers
 
 
 class BaseTaskSerializer(serializers.Serializer):
-    # TODO: extend serializer_field_mapping
     serializer_field_mapping = {
         int: serializers.IntegerField,
+        float: serializers.FloatField,
+        str: serializers.CharField,
+        list: serializers.ListField,
+        dict: serializers.DictField,
     }
 
     @classmethod
